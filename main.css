@@ -4,11 +4,14 @@
           box-sizing: border-box;
 }
 body {
-	font-family: 'Raleway', sans-serif;
+	background-image: url("images/hiking-homepage.jpeg");
+	background-size: cover;
 }
 
-.header, .homepage {
+/* header ------------------------------ */
+.header {
 	text-align: center;
+	padding-bottom: 20px;
 }
 .fa-home {
 	float: right;
@@ -16,15 +19,21 @@ body {
 }
 .fa-home:hover {
 	cursor: pointer;
-	color: blue;
+	color: #fff;
 }
 .header h1 {
 	margin: auto;
 	clear: right;
 	font-size: 4em;
 }
+
+/* homepage ---------------------------- */
+.homepage {
+	text-align: center;
+	padding-bottom: 100px;
+}
 .homepage form {
-	margin-top: 60px;
+	padding-top: 60px;
 	font-size: 1.3em;
 }
 #homepage-input {
@@ -42,14 +51,24 @@ body {
 	padding: 15px;
 }
 
+
+/* advanced search -------------------- */
 .hidden-advanced {
+	width: 500px;
+	margin: 50px auto;
+	padding: 40px 0;
+	border-radius: 10px;
 	text-align: center;
-	margin-top: 100px;
+	background-color: rgba(0,0,0,.5);
+	color: #fff;
 }
 .hidden-advanced h2 {
-	font-size: 2.5em;
+	font-size: 1.7em;
+	text-align: left;
+	padding-left: 20px;
+	font-weight: 300;
 }
-.hidden-advanced button {
+#find-hikes {
 	margin-top: 50px;
 	font-size: 2em;
 	border-radius: 3px;

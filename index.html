@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="font/flaticon.css">
 </head>
 <body>
 
@@ -24,8 +25,9 @@
 	</div>
 
 	<div class='hidden-advanced'>
-		<h2>Choose Your State</h2>
+		<h2><i class="flaticon-us-map"></i>     Choose Your State</h2>
 		<select>
+			<option value="select">(Select state)</option>
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
@@ -78,20 +80,23 @@
 			<option value="WI">Wisconsin</option>
 			<option value="WY">Wyoming</option>
 		</select>	
-		<h2>Search by City</h2>
+		<h2><i class="flaticon-new-york-panoramic-buildings-silhouette"></i>     Search by City</h2>
 		<input type='text' placeholder='Enter city'>
-		<h2>Search by Park or Trail</h2>	
+		<h2><i class="flaticon-park"></i>     Search by Park or Trail</h2>
 		<input type='text' placeholder='Park or trail name'>
-		<h2>Search by Distance</h2>
+		<h2><i class="flaticon-distance"></i>     Search by Distance</h2>
 		<select>
+			<option value="select">(Select distance)</option>
 			<option value="0-5">0 - 5 miles</option>
 			<option value="6-10">6 - 10 miles</option>
 			<option value="11-15">11 - 15 miles</option>
 			<option value="15+">over 15 miles</option>
 		</select>
 		<br><br>	
-		<button>Find hikes</button>
+		<button id="find-hikes">Find hikes</button>
 	</div>
+
+	<div class="results"></div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
