@@ -1,0 +1,56 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+.header, .homepage {
+	text-align: center;
+}
+.fa-home {
+	float: right;
+	padding: 20px;
+}
+.fa-home:hover {
+	cursor: pointer;
+	color: blue;
+}
+.header h1 {
+	margin: auto;
+	clear: right;
+	font-size: 4em;
+}
+.homepage form {
+	margin-top: 60px;
+	font-size: 1.3em;
+}
+#homepage-input {
+	padding: 5px;
+	border-radius: 5px;
+}
+#homepage-submit {
+	padding: 5px;
+	border-radius: 3px;
+}
+#advanced {
+	margin-top: 50px;
+	font-size: 1.4em;
+	border-radius: 30px;
+	padding: 15px;
+}
+
+.hidden-advanced {
+	text-align: center;
+	margin-top: 100px;
+}
+.hidden-advanced h2 {
+	font-size: 2.5em;
+}
+.hidden-advanced button {
+	margin-top: 50px;
+	font-size: 2em;
+	border-radius: 3px;
+}
