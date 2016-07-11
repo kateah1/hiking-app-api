@@ -59,6 +59,7 @@ var getTrails = function(criteria) {
 		data: params,
 		dataType: "jsonp",
 		type: "GET",
+		key: "5bArBx4XJkmshdklclqAYPQuocj0p1KI2Eyjsn14jqYxe4eLKY",
 	})
 
 	// waits for ajax to return with successful promise object
