@@ -35,6 +35,7 @@ $(document).ready(function() {
 		getTrails();
 	})
 
+
 // get hiking trails based on search values
 var getTrails = function(criteria) {
 
@@ -59,23 +60,61 @@ var getTrails = function(criteria) {
 		dataType: "jsonp",
 		type: "GET",
 	})
+
 	// waits for ajax to return with successful promise object
-	.done(function(results) {
+	.done(function(result) {
+		var searchResults = showSearchResults(params, result.items.length);
 
+		$(".search-results").html(searchResults);
+		$.each(result.items, function(i, item) {
+			var search = showTrails(item);
+			$(".results").append(search);
+		});
 	})
-	//waits for ajax to return with an error promise object
+	// waits for ajax to return with an error promise object
 	.fail(function(jqXHR, error) {
-
-	})
+		var errorElem = showError(error);
+		$(".results").append(errorElem);
+	});
 };
 
-// append results based on search criteria
-function results() {
-	$(".results").append("<h1>Name of hiking trail</h1>");
-	$(".results").append("<h2>Location of hiking trail</h2>");
-	$(".results").append("<h3>Distance of hiking trail</h3>");
-}
 
+// takes search object returned by Trail API request and returns new result to be appended to DOM
+var showTrails = function(trail) {
+
+	// clone result template code
+	var result = $(".hidden .results").clone();
+
+	// set the state property in result
+	var stateElem = result.find(".selected-state");
+	stateElem
+
+	// set the city property in result
+	var cityElem = result.find(".selected-city");
+	cityElem
+
+	// set the park property in result
+	var parkElem = result.find(".selected-park");
+	parkElem
+
+	// set the distance property in result
+	var distanceElem = result.find(".selected-distance");
+	distanceElem
+
+	return result;
+};
+
+// takes results object and returns number of results and criteria to be appended to DOM
+var showSearchResults = function(criteria, resultNum) {
+	var results = resultNum + ' results for ' + criteria;
+	return results;
+};
+
+// takes error string and turns it into displayable DOM element
+var showError = function(error) {
+	var errorElem = $(".error").clone();
+	var errorElem.append("<p>" + error + "</p>");
+};
 
 
 

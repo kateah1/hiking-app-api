@@ -36,7 +36,6 @@
 	<div class='hidden-advanced'>
 		<h2><i class="flaticon-us-map"></i>Choose Your State</h2>
 		<select id="state">
-			<option value="select">(Select state)</option>
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
@@ -105,8 +104,20 @@
 		<button id="find-hikes">Find hikes</button>
 	</div>
 
-	<div class="results">
-		
+	<div class="hidden">
+		<dl class="results">
+			<dt>State</dt>
+				<dd class="selected-state"></dd>
+			<dt>City</dt>
+				<dd class="selected-city"></dd>
+			<dt>Park or Trail</dt>
+				<dd class="selected-park"></dd>
+			<dt>Distance</dt>
+				<dd class="selected-distance"></dd>
+		</dl>
+		<div class="error">
+			<p>There was an error in processing your request. This is what we know:</p>
+		</div>
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
