@@ -35,7 +35,7 @@
 
 	<div class='hidden-advanced'>
 		<h2><i class="flaticon-us-map"></i>Choose Your State</h2>
-		<select>
+		<select id="state">
 			<option value="select">(Select state)</option>
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
@@ -89,12 +89,12 @@
 			<option value="WI">Wisconsin</option>
 			<option value="WY">Wyoming</option>
 		</select>	
-		<h2><i class="flaticon-new-york-panoramic-buildings-silhouette"></i>Search by City</h2>
+		<h2 id="city"><i class="flaticon-new-york-panoramic-buildings-silhouette"></i>Search by City</h2>
 		<input type='text' placeholder='Enter city'>
-		<h2><i class="flaticon-park"></i>Search by Park or Trail</h2>
+		<h2 id="park"><i class="flaticon-park"></i>Search by Park or Trail</h2>
 		<input type='text' placeholder='Park or trail name'>
 		<h2><i class="flaticon-distance"></i>Search by Distance</h2>
-		<select>
+		<select id="distance">
 			<option value="select">(Select distance)</option>
 			<option value="0-5">0 - 5 miles</option>
 			<option value="6-10">6 - 10 miles</option>
@@ -105,7 +105,9 @@
 		<button id="find-hikes">Find hikes</button>
 	</div>
 
-	<div class="results"></div>
+	<div class="results">
+		
+	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
