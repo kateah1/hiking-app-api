@@ -92,33 +92,19 @@
 		<input type='text' placeholder='Enter city'>
 		<h2 id="park"><i class="flaticon-park"></i>Search by Park or Trail</h2>
 		<input type='text' placeholder='Park or trail name'>
-		<h2><i class="flaticon-distance"></i>Search by Distance</h2>
+		<h2><i class="flaticon-distance"></i>Search by Radius</h2>
 		<select id="distance">
 			<option value="select">(Select distance)</option>
-			<option value="0-5">0 - 5 miles</option>
-			<option value="6-10">6 - 10 miles</option>
-			<option value="11-15">11 - 15 miles</option>
-			<option value="15+">over 15 miles</option>
+			<option value="5">5 miles</option>
+			<option value="15">15 miles</option>
+			<option value="25">25 miles</option>
+			<option value="100">over 25 miles</option>
 		</select>
 		<br><br>	
 		<button id="find-hikes">Find hikes</button>
 	</div>
 
-	<div class="hidden">
-		<dl class="results">
-			<dt>State</dt>
-				<dd class="selected-state"></dd>
-			<dt>City</dt>
-				<dd class="selected-city"></dd>
-			<dt>Park or Trail</dt>
-				<dd class="selected-park"></dd>
-			<dt>Distance</dt>
-				<dd class="selected-distance"></dd>
-		</dl>
-		<div class="error">
-			<p>There was an error in processing your request. This is what we know:</p>
-		</div>
-	</div>
+	<div class="results"></div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>

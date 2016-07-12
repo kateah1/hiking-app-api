@@ -39,70 +39,37 @@ $(document).ready(function() {
 // get hiking trails based on search values
 var getTrails = function(criteria) {
 
-	var park = $("#park").val();
-	var city = $("#city").val();
-	var state = $("#state").val();
-	var distance = $("#distance").val();
-
 	// parameters to pass in request to Trail API
 	var params = {
-		q[activities_activity_name_cont]: park,
-		q[activities_activity_type_name_eq]: 'hiking',
-		q[city_cont]: city,
-		q[country_cont]: 'United States',
-		q[state_cont]: state,
-		radius: distance,
+		"q[activities_activity_name_cont]": $("#park").val(),
+		"q[activities_activity_type_name_eq]": 'hiking',
+		"q[city_cont]": $("#city").val(),
+		"q[country_cont]": 'United States',
+		"q[state_cont]": $("#state").val(),
+		radius: $("#distance").val()
 	};
 
 	$.ajax({
-		url: "https://trailapi-trailapi.p.mashape.com/",
-		data: params,
-		dataType: "jsonp",
-		type: "GET",
-		key: "5bArBx4XJkmshdklclqAYPQuocj0p1KI2Eyjsn14jqYxe4eLKY",
-	})
-
-	// waits for ajax to return with successful promise object
-	.done(function(result) {
-		var searchResults = showSearchResults(params, result.items.length);
-
-		$(".search-results").html(searchResults);
-		$.each(result.items, function(i, item) {
-			var search = showTrails(item);
-			$(".results").append(search);
-		});
-	})
-	// waits for ajax to return with an error promise object
-	.fail(function(jqXHR, error) {
-		var errorElem = showError(error);
-		$(".results").append(errorElem);
+    	url: 'https://trailapi-trailapi.p.mashape.com/', // The URL to the API. You can get this in the API page of the API you intend to consume
+    	type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
+    	data: params, // Additional parameters here
+    	dataType: 'json',
+    	success: function(data) {
+    		console.log((data));
+    		for(var i = 0; i < data.places.length; i++) {
+    			$(".results").append("<h1>" + data.places[i].name + "</h1>");
+    			$(".results").append("<h2>" + data.places[i].city + ", " + data.places[i].state + "</h2>");
+    			$(".results").append("<p>" + data.places[i].description + "</p>");
+    			$(".results").append("<p>" + "Directions: " + data.places[i].directions + "</p>");
+    			$(".results").append("<a href=>" + data.places[i].activities[0].url + "</a>");
+    		}
+    	},
+    	error: function(err) { alert(err); },
+    	beforeSend: function(xhr) {
+    		xhr.setRequestHeader("X-Mashape-Authorization", "QYyfJ0AJ55mshNE7Z8fXe8CIU4pQp1bT9bMjsnaTW8xTgmib0u"); // Enter here your Mashape key
+    	}
 	});
-};
 
-
-// takes search object returned by Trail API request and returns new result to be appended to DOM
-var showTrails = function(trail) {
-
-	// clone result template code
-	var result = $(".hidden .results").clone();
-
-	// set the state property in result
-	var stateElem = result.find(".selected-state");
-	stateElem
-
-	// set the city property in result
-	var cityElem = result.find(".selected-city");
-	cityElem
-
-	// set the park property in result
-	var parkElem = result.find(".selected-park");
-	parkElem
-
-	// set the distance property in result
-	var distanceElem = result.find(".selected-distance");
-	distanceElem
-
-	return result;
 };
 
 // takes results object and returns number of results and criteria to be appended to DOM
@@ -110,13 +77,6 @@ var showSearchResults = function(criteria, resultNum) {
 	var results = resultNum + ' results for ' + criteria;
 	return results;
 };
-
-// takes error string and turns it into displayable DOM element
-var showError = function(error) {
-	var errorElem = $(".error").clone();
-	var errorElem.append("<p>" + error + "</p>");
-};
-
 
 
 
