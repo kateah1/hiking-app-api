@@ -25,7 +25,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		$(".results").show();
 		$(".results").html('');
-		getTrails();
+		getBasicTrails();
 	})
 
 	$("#find-hikes").click(function(e) {
@@ -34,6 +34,31 @@ $(document).ready(function() {
 		$(".results").html('');
 		getTrails();
 	})
+
+// get basic hiking trails by state only
+var getBasicTrails = function(criteria) {
+
+	$.ajax({
+    	url: 'https://trailapi-trailapi.p.mashape.com/', // The URL to the API. You can get this in the API page of the API you intend to consume
+    	type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
+    	data: {"q[state_cont]": $(".homepage form > input").val()}, // Additional parameters here
+    	dataType: 'json',
+    	success: function(data) {
+    		console.log((data));
+    		for(var i = 0; i < data.places.length; i++) {
+    			$(".results").append("<h1>" + data.places[i].name + "</h1>");
+    			$(".results").append("<h2>" + data.places[i].city + ", " + data.places[i].state + "</h2>");
+    			$(".results").append("<p>" + data.places[i].description + "</p>");
+    			$(".results").append("<p>" + "Directions: " + data.places[i].directions + "</p>");
+    			$(".results").append("<a href=>" + data.places[i].activities[0].url + "</a>");
+    		}
+    	},
+    	error: function(err) { alert(err); },
+    	beforeSend: function(xhr) {
+    		xhr.setRequestHeader("X-Mashape-Authorization", "QYyfJ0AJ55mshNE7Z8fXe8CIU4pQp1bT9bMjsnaTW8xTgmib0u"); // Enter here your Mashape key
+    	}
+	});
+};
 
 
 // get hiking trails based on search values
@@ -70,12 +95,6 @@ var getTrails = function(criteria) {
     	}
 	});
 
-};
-
-// takes results object and returns number of results and criteria to be appended to DOM
-var showSearchResults = function(criteria, resultNum) {
-	var results = resultNum + ' results for ' + criteria;
-	return results;
 };
 
 

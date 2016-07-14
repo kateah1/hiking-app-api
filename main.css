@@ -157,11 +157,13 @@ body {
     font-weight: 200;
     width: 225px;
     margin-bottom: 40px;
+    color: #4d4b5c;
 }
 
 .hidden-advanced select:hover {
     cursor: pointer;
 }
+
 
 #find-hikes {
     margin-top: 50px;
