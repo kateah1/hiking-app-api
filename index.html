@@ -5,15 +5,17 @@
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" type="text/css" href="normalize.css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="font/flaticon.css">
 </head>
 <body>
 
+<img class="bg" src="images/bg2.jpg">
+
 	<div class='header'>
 		<i class="fa fa-home fa-3x" aria-hidden="true"></i>
-		<h1><i class="flaticon-hiking"></i>     Find Your Next
+		<h1>F<i class="flaticon-hiking"></i>nd Your Next
 			<div class="rotating-words">
 				<span> Hike</span>
 				<span> Trek</span>
@@ -27,8 +29,8 @@
 
 	<div class='homepage'>
 		<form>
-			<input type='text' placeholder='Enter a state or city' id="homepage-input">
-			<input type='submit' id="homepage-submit">
+			<input type='text' placeholder='state or city' id="homepage-input">
+			<button id="homepage-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</form>
 		<button id="advanced">Advanced search</button>
 	</div>
@@ -106,7 +108,7 @@
 
 	<div class="results"></div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
