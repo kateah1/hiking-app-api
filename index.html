@@ -20,7 +20,7 @@
 				<span> Hike</span>
 				<span> Trek</span>
 				<span> Adventure</span>
-				<span> Tour de Force</span>
+				<span> Escapade</span>
 				<span> Climb</span>
 				<span> Trail</span>
 			</div>
@@ -29,15 +29,19 @@
 
 	<div class='homepage'>
 		<form>
-			<input type='text' placeholder='enter state' id="homepage-input">
+			<input type='text' placeholder='enter  state' id="homepage-input">
 			<button id="homepage-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</form>
 		<button id="advanced">Advanced search</button>
 	</div>
 
-	<div class='hidden-advanced'>
-		<h2><i class="flaticon-us-map"></i>Choose Your State</h2>
-		<select id="state">
+	<div class="hidden-advanced">
+
+		<div class="col-3">
+			<i class="flaticon-us-map"></i>
+			<br />
+			<h2>Choose Your State</h2>
+			<select id="state">
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
@@ -89,21 +93,38 @@
 			<option value="WV">West Virginia</option>
 			<option value="WI">Wisconsin</option>
 			<option value="WY">Wyoming</option>
-		</select>	
-		<h2 id="city"><i class="flaticon-new-york-panoramic-buildings-silhouette"></i>Search by City</h2>
-		<input type='text' placeholder='Enter city'>
-		<h2 id="park"><i class="flaticon-park"></i>Search by Park or Trail</h2>
-		<input type='text' placeholder='Park or trail name'>
-		<h2><i class="flaticon-distance"></i>Search by Radius</h2>
-		<select id="distance">
+			</select>	
+		</div>
+	
+		<div class="col-3">
+			<i class="flaticon-new-york-panoramic-buildings-silhouette"></i>
+			<br />	
+			<h2 id="city">Search by City</h2>
+			<input type='text' placeholder='Enter city'>
+		</div>
+	
+		<div class="col-3">	
+			<i class="flaticon-park"></i>
+			<br />
+			<h2 id="park">Search by Park or Trail</h2>
+			<input type='text' placeholder='Park or trail name'>
+		</div>
+
+		<div class="col-3">
+			<i class="flaticon-distance"></i>
+			<br />
+			<h2>Search by Radius</h2>
+			<select id="distance">
 			<option value="select">(Select distance)</option>
 			<option value="5">5 miles</option>
 			<option value="15">15 miles</option>
 			<option value="25">25 miles</option>
 			<option value="100">over 25 miles</option>
-		</select>
-		<br><br>	
+			</select>
+		</div>
+
 		<button id="find-hikes">Find hikes</button>
+
 	</div>
 
 	<div class="results"></div>

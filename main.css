@@ -6,6 +6,7 @@
 body {
     background-image: url("images/bg2.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -29,13 +30,16 @@ body {
 }
 
 .fa-home {
-    float: right;
-    padding: 20px;
+    position: absolute;
+    left: 0;
+    padding-left: 20px;
+    margin-top: -25px;
+    color: #4d4b5c;
 }
 
 .fa-home:hover {
     cursor: pointer;
-    color: rgba(0, 0, 0, .4);
+    opacity: .7;
 }
 
 .header h1 {
@@ -119,8 +123,9 @@ body {
     margin-top: 5px;
     padding: 10px;
     background: #fff;
-    border: 1px solid #444;
-    letter-spacing: -1px;
+    border: 1px solid #4d4b5c;
+    color: #4d4b5c;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
@@ -130,7 +135,7 @@ body {
 /* advanced search -------------------- */
 
 .hidden-advanced {
-    width: 500px;
+    width: 800px;
     margin: 50px auto;
     padding: 40px 0;
     text-align: center;
@@ -139,11 +144,12 @@ body {
 }
 
 .hidden-advanced h2 {
-    font-size: 1.7em;
-    text-align: left;
+    font-size: 1em;
+    text-align: center;
     padding-left: 20px;
     font-weight: 200;
     color: #4d4b5c;
+    text-transform: uppercase;
 }
 
 .hidden-advanced h2 > i {
@@ -155,9 +161,34 @@ body {
     background: transparent;
     padding: 5px;
     font-weight: 200;
-    width: 225px;
+    width: 100%;
     margin-bottom: 40px;
     color: #4d4b5c;
+    height: 35px;
+    border: 1px solid #444;
+}
+
+.col-3 {
+    width: 25%;
+    margin-right: -4px;
+    display: inline-block;
+    vertical-align: top;
+    height: 150px;
+    padding: 20px;
+}
+
+.col-3 h2 {
+    height: 50px;
+}
+
+.col-3 i {
+    color: #4d4b5c;
+}
+
+.col-3 input {}
+
+#distance {
+    border-right: 1px solid #444;
 }
 
 .hidden-advanced select:hover {
@@ -167,24 +198,43 @@ body {
 
 #find-hikes {
     margin-top: 50px;
-    font-size: 2em;
     padding: 10px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0);
-    font-weight: 200;
+    background: #fff;
+    border: 1px solid #4d4b5c;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #4d4b5c;
 }
 
-#find-hikes:hover {
-    background-color: rgba(0, 0, 0, .5);
-}
+#find-hikes:hover {}
 
 
 /* results page ------------------------- */
 
 .results {
-    background-color: rgba(0, 0, 0, .6);
-    color: #fff;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    color: #6057A8;
+}
+
+a:hover {
+    opacity: .7;
+}
+
+.place h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.place {
+    background-color: rgba(250, 249, 251, 0.46);
+    margin-bottom: 20px;
     padding: 20px;
+    border: 1px solid rgba(68, 68, 68, 0.12);
+    color: #444;
 }
 
 #homepage-input {
@@ -234,4 +284,8 @@ button {
 .flaticon-hiking:before {
 	margin:0 !important;
 	padding:0 !important;
+}
+
+.no-description {
+    display: none;
 }

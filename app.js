@@ -46,11 +46,20 @@ var getBasicTrails = function(criteria) {
     	success: function(data) {
     		console.log((data));
     		for(var i = 0; i < data.places.length; i++) {
-    			$(".results").append("<h1>" + data.places[i].name + "</h1>");
-    			$(".results").append("<h2>" + data.places[i].city + ", " + data.places[i].state + "</h2>");
-    			$(".results").append("<p>" + data.places[i].description + "</p>");
-    			$(".results").append("<p>" + "Directions: " + data.places[i].directions + "</p>");
-    			$(".results").append("<a href=>" + data.places[i].activities[0].url + "</a>");
+
+    			var place = data.places[i];
+    			var directions = place.directions;
+
+    			$('.results').append(`
+
+					<div class="place">
+						<h1>${place.name}</h1>
+						<h2>${place.city}, ${place.state}</h2>
+						<p class="${place.description === null ? 'no-description' : ''}">${place.description}</p>
+						<p>Directions: ${directions}</p>
+						<a href="${place.activities[0].url}">Read more</a>
+					</div>
+				`);
     		}
     	},
     	error: function(err) { alert(err); },
@@ -82,11 +91,21 @@ var getTrails = function(criteria) {
     	success: function(data) {
     		console.log((data));
     		for(var i = 0; i < data.places.length; i++) {
-    			$(".results").append("<h1>" + data.places[i].name + "</h1>");
-    			$(".results").append("<h2>" + data.places[i].city + ", " + data.places[i].state + "</h2>");
-    			$(".results").append("<p>" + data.places[i].description + "</p>");
-    			$(".results").append("<p>" + "Directions: " + data.places[i].directions + "</p>");
-    			$(".results").append("<a href=>" + data.places[i].activities[0].url + "</a>");
+
+    			var place = data.places[i];
+    			var directions = place.directions;
+
+    			$('.results').append(`
+
+					<div class="place">
+						<h1>${place.name}</h1>
+						<h2>${place.city}, ${place.state}</h2>
+						<p class="${place.description === null ? 'no-description' : ''}">${place.description}</p>
+						<p>Directions: ${directions}</p>
+						<a href="${place.activities[0].url}">Read more</a>
+					</div>
+				`);
+
     		}
     	},
     	error: function(err) { alert(err); },
